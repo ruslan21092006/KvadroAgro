@@ -81,7 +81,7 @@ const fetchItems = async () => {
     }
 
     if (filters.searchQuery) {
-      params.title = `*${filters.searchQuery}*`
+      params.title = `${filters.searchQuery}`
     }
 
     const { data } = await axios.get(`https://65faed1e3909a9a65b1c07f4.mockapi.io/item`, {

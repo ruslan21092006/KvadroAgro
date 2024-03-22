@@ -54,7 +54,7 @@ const buttonDisabled = computed(() => isCreating.value || cartIsEmpty.value)
       <InfoBlock
         v-if="orderId"
         title="Замовлення оформлене!"
-        :description="`Ваше замовлення #${orderId} для подальшого підтвердження заказу, телефонуйте за номером +380969380421`"
+        :description="`Ваше замовлення #${orderId} для подальшого підтвердження заказу, телефонуйте за номером +380969380421 або пишіть нам у телеграм:  https://t.me/kvadroagro_admin`"
         image-url="/order-success-icon.png"
       />
     </div>
