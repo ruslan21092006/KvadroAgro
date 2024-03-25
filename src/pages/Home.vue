@@ -128,9 +128,9 @@ watch(filters, fetchItems)
 
     <div class="flex flex-col lg:flex-row lg:gap-4 mt-4 lg:mt-0">
       <select @change="onChangeSelect" class="py-2 px-3 border rounded-md outline-none">
-        <option value="name">По назві</option>
-        <option value="price">По ціні (дешеві)</option>
-        <option value="-price">По ціні (дорогі)</option>
+        <option value="zerno">Посівний матеріал</option>
+        <option value="zzr">Засоби захисту рослин</option>
+        <option value="dobr">Добрива</option>
       </select>
 
       <div class="relative lg:flex-row lg:gap-4">
