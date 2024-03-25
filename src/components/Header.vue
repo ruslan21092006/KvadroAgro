@@ -7,37 +7,34 @@ const emit = defineEmits(['openDrawer'])
 </script>
 
 <template>
-  <header class="flex justify-between border-b border-slate-200 px-10 py-8">
-    <router-link to="/"
-      ><div class="flex items-center gap-4">
-        <img src="/logo.png" alt="Logo" class="w-10" />
+  <header class="flex flex-col items-center justify-between border-b border-slate-200 px-10 py-8">
+    <router-link to="/">
+      <div class="flex items-center flex-col md:flex-row gap-4 md:gap-0 md:items-center">
+        <img src="/logo.png" alt="Logo" class="w-30" />
         <div>
           <h2 class="text-xl font-bold uppercase">Kvadro Agro</h2>
           <p class="text-slate-400">Магазин агротоварів</p>
         </div>
-      </div></router-link
-    >
+      </div>
+    </router-link>
 
-    <ul class="flex items-center gap-10">
-      <li
-        @click="() => emit('openDrawer')"
-        class="flex items-center cursor-pointer gap-3 text-gray-500 hover:text-black"
-      >
-        <img src="/cart.svg" alt="Cart" />
-        <b>{{ totalPrice }} грн.</b>
-      </li>
+    <div class="flex flex-col items-center md:flex-row gap-10 mt-8 md:mt-0">
+      <div class="flex items-center gap-3 text-gray-500 hover:text-black">
+        <li @click="() => emit('openDrawer')"><img src="/cart.svg" alt="Cart" />
+        <b>{{ totalPrice }} грн.</b></li>
+      </div>
 
       <router-link to="/favorites">
-        <li class="flex items-center cursor-pointer gap-3 text-gray-500 hover:text-black">
+        <div class="flex items-center gap-3 text-gray-500 hover:text-black">
           <img src="/heart.svg" alt="Cart" />
           <span>Закладки</span>
-        </li>
+        </div>
       </router-link>
 
-      <li class="flex items-center cursor-pointer gap-3 text-gray-500 hover:text-black">
+      <div class="flex items-center gap-3 text-gray-500 hover:text-black">
         <img src="/profile.svg" alt="Cart" />
-        <span>Профіль</span>
-      </li>
-    </ul>
+        <span>Зв'язатися з продавцем <br>+380969380421<br></span>
+      </div>
+    </div>
   </header>
 </template>

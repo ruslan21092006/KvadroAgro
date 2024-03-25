@@ -123,21 +123,21 @@ watch(filters, fetchItems)
 </script>
 
 <template>
-  <div class="flex justify-between items-center">
-    <h2 class="text-3xl font-bold mb-8">Всі товари</h2>
+  <div class="flex flex-col lg:flex-row justify-between items-center mb-8">
+    <h2 class="text-3xl font-bold">Всі товари</h2>
 
-    <div class="flex gap-4">
+    <div class="flex flex-col lg:flex-row lg:gap-4 mt-4 lg:mt-0">
       <select @change="onChangeSelect" class="py-2 px-3 border rounded-md outline-none">
         <option value="name">По назві</option>
         <option value="price">По ціні (дешеві)</option>
         <option value="-price">По ціні (дорогі)</option>
       </select>
 
-      <div class="relative">
+      <div class="relative lg:flex-row lg:gap-4">
         <img class="absolute left-4 top-3" src="/search.svg" />
         <input
           @input="onChangeSearchInput"
-          class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400"
+          class="py-2 px-3 border rounded-md outline-none placeholder:text-sm placeholder:text-gray-500"
           type="text"
           placeholder="Пошук..."
         />
