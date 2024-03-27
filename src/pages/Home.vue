@@ -10,8 +10,8 @@ const { cart, addToCart, removeFromCart } = inject('cart')
 const items = ref([])
 
 const filters = reactive({
-  sortBy: 'title',
-  searchQuery: ''
+  selectedType: ref('species'), // Вибраний тип
+  searchQuery: ref('')
 })
 
 const onClickAddPlus = (item) => {
@@ -23,8 +23,9 @@ const onClickAddPlus = (item) => {
 }
 
 const onChangeSelect = (event) => {
-  filters.sortBy = event.target.value
-}
+  filters.selectedType = event.target.value;
+  fetchItems();
+};
 
 const onChangeSearchInput = debounce((event) => {
   filters.searchQuery = event.target.value
@@ -77,8 +78,9 @@ const fetchFavorites = async () => {
 const fetchItems = async () => {
   try {
     const params = {
-      sortBy: filters.sortBy
-    }
+      species: filters.selectedType,
+      title: filters.searchQuery
+    };
 
     if (filters.searchQuery) {
       params.title = `${filters.searchQuery}`
@@ -86,14 +88,18 @@ const fetchItems = async () => {
 
     const { data } = await axios.get(`https://65faed1e3909a9a65b1c07f4.mockapi.io/item`, {
       params
-    })
+    })  
 
+
+
+    // items.value = data.filter(item => item.type === filters.selectedType)
     items.value = data.map((obj) => ({
       ...obj,
       isFavorite: false,
       favoriteId: null,
       isAdded: false
     }))
+    
   } catch (err) {
     console.log(err)
   }
@@ -124,17 +130,18 @@ watch(filters, fetchItems)
 
 <template>
   <div class="flex flex-col lg:flex-row justify-between items-center mb-8">
-    <h2 class="text-3xl font-bold">Всі товари</h2>
+    <h2 class="text-3xl font-bold">Каталог товарів</h2>
 
     <div class="flex flex-col lg:flex-row lg:gap-4 mt-4 lg:mt-0">
       <select @change="onChangeSelect" class="py-2 px-3 border rounded-md outline-none">
+        <option>Виберіть вид товару</option>
         <option value="zerno">Посівний матеріал</option>
         <option value="zzr">Засоби захисту рослин</option>
         <option value="dobr">Добрива</option>
       </select>
 
       <div class="relative lg:flex-row lg:gap-4">
-        <img class="absolute left-4 top-3" src="/search.svg" />
+        <img class="absolute left-20 top-3" src="/search.svg" />
         <input
           @input="onChangeSearchInput"
           class="py-2 px-3 border rounded-md outline-none placeholder:text-sm placeholder:text-gray-500"
