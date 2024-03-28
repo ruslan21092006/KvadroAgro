@@ -3,7 +3,8 @@
 @import 'tailwindcss/utilities';
 
 body {
-  background-color: rgb(247 254 231);
+  background-image: url('/Фото фону сайту.jpg');
+  background-size: cover;
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
