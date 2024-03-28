@@ -130,7 +130,7 @@ watch(filters, fetchItems)
 
 <template>
   <div class="flex flex-col lg:flex-row justify-between items-center mb-8">
-    <h2 class="text-3xl font-bold">Каталог товарів</h2>
+    <h2 class="text-3xl text-blue-400 font-bold">Каталог товарів</h2>
 
     <div class="flex flex-col lg:flex-row lg:gap-4 mt-4 lg:mt-0">
       <select @change="onChangeSelect" class="py-2 px-3 border rounded-md outline-none">

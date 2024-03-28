@@ -12,8 +12,8 @@ const emit = defineEmits(['openDrawer'])
       <div class="flex items-center flex-col md:flex-row gap-4 md:gap-0 md:items-center">
         <img src="/logo.png" alt="Logo" class="w-30" />
         <div>
-          <h2 class="text-xl font-bold uppercase">Kvadro Agro</h2>
-          <p class="text-slate-400">Магазин агротоварів</p>
+          <h2 class="text-xl font-bold text-blue-600 uppercase">Kvadro Agro</h2>
+          <p class="text-yellow-400">Магазин агротоварів</p>
         </div>
       </div>
     </router-link>
