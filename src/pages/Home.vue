@@ -133,18 +133,18 @@ watch(filters, fetchItems)
     <h2 class="text-3xl text-blue-400 font-bold">Каталог товарів</h2>
 
     <div class="flex flex-col lg:flex-row lg:gap-4 mt-4 lg:mt-0">
-      <select @change="onChangeSelect" class="py-2 px-3 border rounded-md outline-none">
+      <select @change="onChangeSelect" class="py-2 px-3  bg-yellow-50 border border-blue-300 rounded-md outline-none">
         <option>Виберіть вид товару</option>
         <option value="zerno">Посівний матеріал</option>
         <option value="zzr">Засоби захисту рослин</option>
         <option value="dobr">Добрива</option>
       </select>
 
-      <div class="relative lg:flex-row lg:gap-4">
+      <div class="relative border border-blue-300 rounded-md lg:flex-row lg:gap-4">
         <img class="absolute left-20 top-3" src="/search.svg" />
         <input
           @input="onChangeSearchInput"
-          class="py-2 px-3 border rounded-md outline-none placeholder:text-sm placeholder:text-gray-500"
+          class="py-2 px-3 border rounded-md outline-none  bg-yellow-50 placeholder:text-sm placeholder:text-gray-500"
           type="text"
           placeholder="Пошук..."
         />
