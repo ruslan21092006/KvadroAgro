@@ -136,7 +136,9 @@ watch(filters, fetchItems)
       <select @change="onChangeSelect" class="py-2 px-3  bg-yellow-50 border border-blue-300 rounded-md outline-none">
         <option>Виберіть вид товару</option>
         <option value="zerno">Посівний матеріал</option>
-        <option value="zzr">Засоби захисту рослин</option>
+        <option value="gbc">Гербіциди</option>
+        <option value="phc">Фунгіциди</option>
+        <option value="inc">Інсектициди</option>
         <option value="dobr">Добрива</option>
       </select>
 

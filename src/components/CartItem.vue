@@ -5,7 +5,7 @@ defineProps({
   id: Number,
   title: String,
   imageUrl: String,
-  price: Number
+  price: String
 })
 </script>
 

@@ -20,8 +20,8 @@ const emit = defineEmits(['openDrawer'])
 
     <div class="flex flex-col items-center md:flex-row gap-10 mt-8 md:mt-0">
       <div class="flex items-center gap-3 text-gray-500 hover:text-black">
-        <li @click="() => emit('openDrawer')"><img src="/cart.svg" alt="Cart" />
-        <b>{{ totalPrice }} грн.</b></li>
+        <li @click="() => emit('openDrawer')"><img src="/cart.svg" alt="Cart" /></li>
+        
       </div>
 
       <router-link to="/favorites">
